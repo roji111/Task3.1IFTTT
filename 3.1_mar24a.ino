@@ -51,7 +51,6 @@ void onIntensityChange()  {
   if(intensity>300)
   {
     sunlight= true;
-    onSunlightChange();
     
     Serial.print("Light intensity: ");
     Serial.print(intensity);
@@ -62,7 +61,6 @@ void onIntensityChange()  {
   else
   {
     sunlight=false;
-    onSunlightChange();
     digitalWrite(LED_BUILTIN, HIGH);
     Serial.print("Light intensity: ");
     Serial.print(intensity);
@@ -70,24 +68,6 @@ void onIntensityChange()  {
   }
 }
 
-/*
-  Since Sunlight is READ_WRITE variable, onSunlightChange() is
-  executed every time a new value is received from IoT Cloud.
-*/
-void onSunlightChange()  {
-  if (sunlight=true)
-  {
-    //turn led on
-    digitalWrite(LED_BUILTIN, HIGH);
-    //delay 2 sec
-    delay(2000);
-  }
-  else if (sunlight=false)
-  {
-    //turn led on
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(2000);
-  }
 }
 
 
