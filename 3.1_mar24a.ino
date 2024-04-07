@@ -48,7 +48,7 @@ intensity= sensor;
 */
 void onIntensityChange()  {
 
-  if(intensity>300)
+  if(intensity>250)
   {
     sunlight= true;
     
